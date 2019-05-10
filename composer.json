@@ -1,5 +1,5 @@
 {
-    "name": "techouse/intl-date-time",
+    "name": "gustavowiller/intl-date-time",
     "description": "International datepicker for Laravel Nova.",
     "keywords": [
         "laravel",
