@@ -111,6 +111,10 @@ class IntlDateTime extends DateTime
             if ($locale === 'en') {
                 $locale = 'en-gb';
             }
+            
+            if ($locale === 'pt-BR') {
+                $locale = 'pt';
+            }
 
             return $this->withMeta([__FUNCTION__ => $locale]);
         }
