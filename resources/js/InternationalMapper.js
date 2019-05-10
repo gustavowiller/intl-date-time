@@ -42,6 +42,7 @@ export const flatpickrLocaleMapping = {
     pa:      {translation: 'pa-in', name: 'Punjabi'},
     pl:      {translation: 'pl', name: 'Polish'},
     pt:      {translation: 'pt', name: 'Portuguese'},
+    pt_BR:   {translation: 'pt_BR', name: 'Portuguese (BR)'},
     ro:      {translation: 'ro', name: 'Romanian'},
     ru:      {translation: 'ru', name: 'Russian'},
     si:      {translation: 'si', name: 'Sinhala'},
