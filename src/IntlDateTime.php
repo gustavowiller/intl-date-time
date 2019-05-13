@@ -27,7 +27,7 @@ class IntlDateTime extends DateTime
         'hr', 'th', 'tr', 'ar', 'be', 'bg', 'bn', 'ca', 'cs', 'cy', 'da', 'de', 'de-at', 'de-ch', 'en', 'en-ca',
         'en-au', 'en-gb', 'en-ie', 'en-nz', 'eo', 'es', 'es-do', 'es-us', 'et', 'fa', 'fi', 'fr', 'fr-ca', 'fr-ch',
         'el', 'he', 'hi', 'hu', 'id', 'it', 'ja', 'ko', 'km', 'kk', 'lt', 'lv', 'mk', 'ms', 'my', 'nl', 'nb', 'pa-in',
-        'pl', 'pt', 'pt-BR', 'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv', 'uk', 'vi', 'zh-cn', 'zh-hk', 'zh-tw',
+        'pl', 'pt', 'pt-br', 'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv', 'uk', 'vi', 'zh-cn', 'zh-hk', 'zh-tw',
     ];
 
     /**
@@ -43,6 +43,11 @@ class IntlDateTime extends DateTime
         parent::__construct($name, $attribute, $resolveCallback);
 
         $appLocale = strtolower(trim(config('app.locale')));
+
+        if ($appLocale == "pt-br") {
+            $appLocale = "pt";
+        }
+
         if (in_array($appLocale, self::$momentjsSupportedLocales, true)) {
             $this->locale = $appLocale;
         }
@@ -110,10 +115,6 @@ class IntlDateTime extends DateTime
 
             if ($locale === 'en') {
                 $locale = 'en-gb';
-            }
-            
-            if ($locale === 'pt-BR') {
-                $locale = 'pt';
             }
 
             return $this->withMeta([__FUNCTION__ => $locale]);
